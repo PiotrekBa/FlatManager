@@ -22,6 +22,8 @@ public class Flat {
     @JsonIgnore
     private Owner owner;
 
+    private boolean enable = true;
+
     public Flat() {
     }
 
@@ -69,5 +71,13 @@ public class Flat {
 
     public void setOwner(Owner owner) {
         this.owner = owner;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
 }

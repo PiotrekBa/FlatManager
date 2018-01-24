@@ -6,6 +6,7 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.web.bind.annotation.*;
 import pl.piotrbartoszak.converter.FlatConverter;
 import pl.piotrbartoszak.model.Flat;
+import pl.piotrbartoszak.model.FlatDetailsView;
 import pl.piotrbartoszak.model.Owner;
 import pl.piotrbartoszak.repository.FlatRepository;
 import pl.piotrbartoszak.repository.OwnerRepository;
@@ -23,27 +24,38 @@ public class FlatController {
     OwnerRepository ownerRepository;
 
 
-    @GetMapping
-    public List<Flat> flats() {
-
-        return flatRepository.findAll();
+    @GetMapping("")
+    public List<Flat> allFlats() {
+        return flatRepository.findByOwnerId(1l);
     }
 
-    @PostMapping
+    @PostMapping("")
     public void addFlat(@RequestBody Flat flat) {
         Owner owner = ownerRepository.findOne(1L);
         flat.setOwner(owner);
         flatRepository.save(flat);
     }
 
-    public void addFormatter(FormatterRegistry registry) {
-        registry.addConverter(getFlatConverter());
+    @GetMapping("/{id}")
+    public Flat showFlat(@PathVariable long id) {
+        Flat flat = flatRepository.findOne(id);
+        return flat;
     }
 
-    @Bean
-    public FlatConverter getFlatConverter() {
-        return new FlatConverter();
+    @DeleteMapping("/{id}")
+    public void deleteFlat(@PathVariable long id) {
+        Flat flat = flatRepository.findOne(id);
+        flat.setEnable(false);
+        flatRepository.save(flat);
     }
+
+    @PutMapping("/{id}")
+    public void updateFlat(@PathVariable long id, @RequestBody Flat flat){
+        Owner owner = ownerRepository.findOne(1l);
+        flat.setOwner(owner);
+        flatRepository.save(flat);
+    }
+
 
 
 }

@@ -33,14 +33,16 @@
             <table class="table table-bordered table-success">
                 <thead>
                 <tr>
-                    <th scope="col" colspan="6">Mieszkania</th>
+                    <th scope="col" colspan="6">Mieszkanie</th>
                 </tr>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nazwa</th>
-                    <th scope="col">Ilość pokoi</th>
-                    <th scope="col">Ilość lokatorów</th>
-                    <th scope="col">Obrót</th>
+                    <th scope="col" colspan="6" id="flat-name"></th>
+                </tr>
+                <tr>
+                    <th scope="col">Nr pokoju</th>
+                    <th scope="col">Wynajem [zł]</th>
+                    <th scope="col">Powierzchnia[m2]</th>
+                    <th scope="col">Wynajmujący</th>
                     <th scope="col">Akcja</th>
                 </tr>
                 </thead>
@@ -49,33 +51,9 @@
             </table>
         </div>
     </div>
+    <a href="flats.html">Powrót</a>
 </div>
-<div id="flat-form">
-    <div id="add-symbol">+ Dodaj mieszkanie</div>
-    <form>
-        <div id ="add-form" style="display: none">
-            <label for="name">Nazwa</label>
-            <div>
-                <input type="text" id="name">
-            </div>
-            <label for="address">Address</label>
-            <div>
-                <input type="text" id="address">
-            </div>
-            <button type="button" class="btn btn-outline-primary" id="save">Zapisz</button>
-        </div>
-    </form>
-</div>
-<div id="flats">
-    <div id="head">
-        <h1>Mieszkania</h1>
-    </div>
-    <div id="content">
-
-    </div>
-</div>
-
 </body>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-<script src="js/flat.js"></script>
+<script src="js/flat-details.js"></script>
 </html>

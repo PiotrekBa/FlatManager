@@ -1,11 +1,17 @@
 package pl.piotrbartoszak.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.beans.factory.annotation.Autowired;
+import pl.piotrbartoszak.repository.RoomRepository;
+import pl.piotrbartoszak.repository.TenantRepository;
 
 import javax.persistence.*;
 import java.util.List;
 
 public class RoomDetailsView {
+
+    @Autowired
+    TenantRepository tenantRepository;
 
     private double area;
 
@@ -56,4 +62,5 @@ public class RoomDetailsView {
     public void setTenant(List<Tenant> tenant) {
         this.tenant = tenant;
     }
+
 }

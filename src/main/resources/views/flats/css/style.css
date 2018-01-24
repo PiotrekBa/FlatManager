@@ -1,8 +1,18 @@
 body {
-    margin-left: 50px;
-    margin-right: 50px;
-    padding: 20px;
+    width: 100%;
+    height: 100%;
 }
+
+#logo {
+    text-align: center;
+    padding: 30px;
+}
+
+#flat-table {
+    margin-top: 50px;
+    text-align: center;
+}
+
 
 #flats{
     background:chocolate ;
@@ -39,4 +49,10 @@ form div div {
     border-radius: 10px;
     border: 2px solid burlywood;
     min-height: 100px;
+}
+
+.flat {
+    border-radius: 5px;
+    border: 2px solid burlywood;
+    margin: 10px;
 }
