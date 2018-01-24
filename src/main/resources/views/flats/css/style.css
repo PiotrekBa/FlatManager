@@ -1,0 +1,42 @@
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+}
+
+#flats{
+    background:chocolate ;
+    border-radius: 25px;
+    border: 2px solid burlywood;
+    padding: 20px;
+}
+
+#flat-form {
+    margin: 10px;
+    border-radius: 25px;
+    border: 2px solid burlywood;
+    padding: 10px 10px 10px 10px;
+
+}
+
+form div div {
+    padding: 10px;
+}
+
+#flats {
+    border-radius: 25px;
+    border: 2px solid burlywood;
+    margin: 10px;
+}
+
+#flats h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+#content {
+    background: beige;
+    border-radius: 10px;
+    border: 2px solid burlywood;
+    min-height: 100px;
+}
