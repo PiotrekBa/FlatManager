@@ -23,38 +23,9 @@
             Menu
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            Podsumowanie
-        </div>
-    </div>
-    <div class="row">
-        <div class="col" id="flat-table">
-            <table class="table table-bordered table-success">
-                <thead>
-                <tr>
-                    <th scope="col" colspan="6">Mieszkanie</th>
-                </tr>
-                <tr>
-                    <th scope="col" colspan="6" id="flat-name"></th>
-                </tr>
-                <tr>
-                    <th scope="col">Nr pokoju</th>
-                    <th scope="col">Wynajem [zł]</th>
-                    <th scope="col">Powierzchnia[m2]</th>
-                    <th scope="col">Wynajmujący</th>
-                    <th scope="col">Akcja</th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
-    </div>
     <div class ="row" id="flat-form">
-        <div id="add-symbol">+ Dodaj pokój</div>
         <form>
-            <div id ="add-form" style="display: none">
+            <div id ="add-form" >
                 <label for="area">Powierzchnia</label>
                 <div>
                     <input type="text" id="area">
@@ -64,6 +35,7 @@
                     <input type="text" id="rent">
                 </div>
                 <button type="button" class="btn btn-outline-primary" id="save">Zapisz</button>
+                <input type="hidden" id="flat-id" value="">
             </div>
         </form>
     </div>
@@ -71,5 +43,5 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-<script src="js/flat-details.js"></script>
+<script src="js/room-edit.js"></script>
 </html>

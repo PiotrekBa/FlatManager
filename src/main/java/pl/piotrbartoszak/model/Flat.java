@@ -24,6 +24,9 @@ public class Flat {
 
     private boolean enable = true;
 
+    @OneToMany(mappedBy = "flat")
+    private List<Finance> finances;
+
     public Flat() {
     }
 
@@ -79,5 +82,13 @@ public class Flat {
 
     public void setEnable(boolean enable) {
         this.enable = enable;
+    }
+
+    public List<Finance> getFinances() {
+        return finances;
+    }
+
+    public void setFinances(List<Finance> finances) {
+        this.finances = finances;
     }
 }

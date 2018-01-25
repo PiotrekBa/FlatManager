@@ -22,10 +22,9 @@ body {
 }
 
 #flat-form {
-    margin: 10px;
     border-radius: 25px;
     border: 2px solid burlywood;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
 
 }
 
@@ -37,18 +36,6 @@ form div div {
     border-radius: 25px;
     border: 2px solid burlywood;
     margin: 10px;
-}
-
-#flats h1 {
-    text-align: center;
-    margin: 10px;
-}
-
-#content {
-    background: beige;
-    border-radius: 10px;
-    border: 2px solid burlywood;
-    min-height: 100px;
 }
 
 .flat {

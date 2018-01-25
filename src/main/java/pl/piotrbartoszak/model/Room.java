@@ -24,6 +24,8 @@ public class Room {
     @OneToMany(mappedBy = "room")
     private List<Tenant> tenant;
 
+    private boolean enable = true;
+
     public Room() {
     }
 
@@ -65,5 +67,13 @@ public class Room {
 
     public void setTenant(List<Tenant> tenant) {
         this.tenant = tenant;
+    }
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
     }
 }

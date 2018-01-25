@@ -9,6 +9,8 @@ $(document).ready(function () {
             console.log(flats);
             showFlats(flats);
             deleteLink();
+            showSummary();
+            menu();
         })
     }
 
@@ -33,6 +35,9 @@ $(document).ready(function () {
         })
     }
 
+    var totalActuallyRent = 0;
+    var totalPosobilityRent = 0;
+
     function rentCounter(rooms) {
         var actuallyRent = 0;
         var posibilityRent = 0;
@@ -44,8 +49,16 @@ $(document).ready(function () {
                 posibilityRent += room.rent;
             }
         })
+        totalActuallyRent += actuallyRent;
+        totalPosobilityRent += posibilityRent;
         return actuallyRent + '/' + posibilityRent;
     }
+
+    function showSummary() {
+        var summary = $('#summary');
+        summary.text('Podsumowanie ' + totalActuallyRent + '/' + totalPosobilityRent);
+    }
+
 
     function tenantCounter(rooms) {
         var counter = 0;
@@ -83,17 +96,23 @@ $(document).ready(function () {
         })
     }
 
+    function menu() {
+        var menu = $('#menu');
+        var link = $('<a href="finance.html?id=1">Finanse</a>');
+        menu.append(link);
+    }
+
     var buttonSave = $('#save');
 
     buttonSave.on('click', function (e) {
         e.preventDefault();
         var flatName = $('#name').val();
-        var address = $('#address').val();
+        var FlatAddress = $('#address').val();
 
         var objToSave = {
             id: 0,
             name: flatName,
-            address: address,
+            address: FlatAddress,
         }
 
         var myHeaders = new Headers({

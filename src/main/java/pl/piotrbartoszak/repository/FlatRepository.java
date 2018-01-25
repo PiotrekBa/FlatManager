@@ -13,4 +13,7 @@ public interface FlatRepository extends JpaRepository<Flat, Long> {
     @Query("select f from Flat f where f.owner.id = ?1")
     List<Flat> findByOwnerId(long id);
 
+    @Query("select f from Flat f where f.owner.id = ?1 and f.enable = true")
+    List<Flat>findEnableByOwnerId(long id);
+
 }

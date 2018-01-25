@@ -7,4 +7,5 @@ import javax.transaction.Transactional;
 
 @Transactional
 public interface OwnerRepository extends JpaRepository<Owner, Long> {
+
 }
