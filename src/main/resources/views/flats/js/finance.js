@@ -10,6 +10,7 @@ $(document).ready(function () {
         }).done(function (finances) {
             console.log(finances);
             showFinances(finances);
+            getIncomes();
         })
     }
     var valueUnregulated = 0;
@@ -17,10 +18,11 @@ $(document).ready(function () {
 
     function showFinances(finances) {
         var financeTable = $('#flat-table tbody');
-        finances.forEach(function (finance, i) {
-            finance.forEach(function(financeOne, j){
+        var i = 1;
+        finances.forEach(function (finance) {
+            finance.forEach(function(financeOne){
                 var tableRow = $('<tr data-id="'+financeOne.id+'">'+
-                    '<th scope="row">'+(i+j+1)+'</th>'+
+                    '<th scope="row">'+i+'</th>'+
                     '<td>'+financeOne.name+'</td>'+
                     '<td>'+getData(financeOne.day,financeOne.month, financeOne.year)+'</td>'+
                     '<td>'+financeOne.flatName+'</td>'+
@@ -33,6 +35,7 @@ $(document).ready(function () {
                 } else {
                     valueUnregulated += financeOne.value;
                 }
+                i++;
             })
         })
         var summaryRow = $('<tr>'+
@@ -55,6 +58,29 @@ $(document).ready(function () {
 }
         return 'Nie';
     }
+
+    function getIncomes() {
+        $.ajax({
+            url: API_URL + "finances/incomes"
+        }).done(function (turnover) {
+            console.log(turnover);
+            showTurnover(turnover);
+        })
+    }
+
+    function showTurnover(turnover) {
+        var totalCosts = valueUnregulated + valueUnregulated;
+        var financeTable = $('#flat-table tbody');
+        var incomeRow = $('<tr>'+
+            '<td colspan="4">Dochód (rzeczywisty/szacowany)</td>'+
+            '<td colspan="2">'+turnover.actualTurnover+'/'+ turnover.possibleTurnover +'</td>'+
+            '</tr><tr>' +
+            '<td colspan="4">Całkowity zysk</td>'+
+            '<td colspan="2">'+(turnover.actualTurnover - totalCosts)+'</td>'+
+            '</tr>');
+        financeTable.append(incomeRow);
+    }
+
     getFinances();
 
 

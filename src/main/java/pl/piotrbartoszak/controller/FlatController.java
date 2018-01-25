@@ -27,6 +27,7 @@ public class FlatController {
     @GetMapping("")
     public List<Flat> allFlats() {
         return flatRepository.findByOwnerId(1l);
+
     }
 
     @PostMapping("")
