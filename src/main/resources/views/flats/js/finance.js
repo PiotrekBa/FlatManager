@@ -77,6 +77,9 @@ $(document).ready(function () {
             '</tr><tr>' +
             '<td colspan="4">Całkowity zysk</td>'+
             '<td colspan="2">'+(turnover.actualTurnover - totalCosts)+'</td>'+
+            '</tr><tr>' +
+            '<td colspan="4">Całkowity możliwy zysk</td>'+
+            '<td colspan="2">'+(turnover.possibleTurnover - totalCosts)+'</td>'+
             '</tr>');
         financeTable.append(incomeRow);
     }
