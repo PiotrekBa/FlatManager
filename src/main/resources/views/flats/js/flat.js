@@ -90,6 +90,7 @@ $(document).ready(function () {
             };
 
             fetch(API_URL+ 'flats/' + id, myInit).then(function (response) {
+                console.log(response);
                 clearFlatsList();
                 getFlats();
             });
@@ -127,6 +128,7 @@ $(document).ready(function () {
         }
 
         fetch(API_URL + "flats", myInit).then(function (response) {
+            console.log(response)
             clearFlatsList();
             getFlats();
         })
